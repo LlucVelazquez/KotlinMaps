@@ -1,15 +1,20 @@
 package cat.itb.damv.m78
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Button
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMapOptions
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.AdvancedMarker
+import com.google.maps.android.compose.CameraPositionState
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.rememberCameraPositionState
@@ -17,6 +22,12 @@ import com.google.maps.android.compose.rememberCameraPositionState
 @SuppressLint("UnrememberedMutableState")
 @Composable
 fun MapsScreen(){
+    val singapore = LatLng(1.35, 103.87)
+    val institut = LatLng(41.4535350766963, 2.1863538644394453)
+    val cameraPositionState: CameraPositionState = rememberCameraPositionState {
+        position = CameraPosition.fromLatLngZoom(singapore, 11f)
+    }
+    val cameraPosition: CameraPositionState = rememberCameraPositionState { position = CameraPosition.fromLatLngZoom(institut,11f) }
     val markers = remember { mutableStateListOf<LatLng>() }
     GoogleMap(
         googleMapOptionsFactory = {
@@ -39,6 +50,16 @@ fun MapsScreen(){
                 state = MarkerState(position = latLng),
                 title = "Nuevo marcador"
             )
+        }
+
+    }
+    Box(Modifier.fillMaxSize()) {
+        GoogleMap(cameraPositionState = cameraPositionState)
+        Button(onClick = {
+            // Move the camera to a new zoom level
+            cameraPosition
+        }) {
+            Text(text = "Zoom In")
         }
     }
 }
