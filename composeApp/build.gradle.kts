@@ -34,6 +34,11 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation("androidx.camera:camera-core:1.5.0-alpha06")
+            implementation("androidx.camera:camera-camera2:1.5.0-alpha06")
+            implementation("androidx.camera:camera-compose:1.5.0-alpha06")
+            implementation("androidx.camera:camera-lifecycle:1.5.0-alpha06")
+            implementation("androidx.camera:camera-extensions:1.5.0-alpha06")
         }
     }
 }
@@ -66,6 +71,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.material3.android)
     debugImplementation(compose.uiTooling)
 }
 secrets {

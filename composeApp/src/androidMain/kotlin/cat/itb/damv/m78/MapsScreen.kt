@@ -27,7 +27,6 @@ fun MapsScreen(){
     val cameraPositionState: CameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(singapore, 11f)
     }
-    val cameraPosition: CameraPositionState = rememberCameraPositionState { position = CameraPosition.fromLatLngZoom(institut,11f) }
     val markers = remember { mutableStateListOf<LatLng>() }
     GoogleMap(
         googleMapOptionsFactory = {
@@ -56,8 +55,9 @@ fun MapsScreen(){
     Box(Modifier.fillMaxSize()) {
         GoogleMap(cameraPositionState = cameraPositionState)
         Button(onClick = {
+            cameraPositionState
             // Move the camera to a new zoom level
-            cameraPosition
+
         }) {
             Text(text = "Zoom In")
         }
