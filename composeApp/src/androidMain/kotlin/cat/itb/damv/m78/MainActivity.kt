@@ -9,11 +9,11 @@ import androidx.compose.ui.tooling.preview.Preview
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContent {
-            MapAppTestTheme {
-                MapsScreen()
-            }
+            //App()
+            //MapsScreen()
+            Navigation()
         }
     }
 }
@@ -21,6 +21,5 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    //App()
-    MapsScreen()
+    App()
 }
