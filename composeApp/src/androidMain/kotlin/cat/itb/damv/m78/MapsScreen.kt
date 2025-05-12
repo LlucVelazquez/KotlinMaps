@@ -21,14 +21,17 @@ import com.google.maps.android.compose.rememberCameraPositionState
 
 @SuppressLint("UnrememberedMutableState")
 @Composable
-fun MapsScreen(){
-    val singapore = LatLng(1.35, 103.87)
-    val institut = LatLng(41.4535350766963, 2.1863538644394453)
-    val cameraPositionState: CameraPositionState = rememberCameraPositionState {
-        position = CameraPosition.fromLatLngZoom(singapore, 11f)
+fun MapsScreen() {
+    val cameraPositionState = rememberCameraPositionState {
+        position = CameraPositionState().position
     }
+
+
     val markers = remember { mutableStateListOf<LatLng>() }
+
     GoogleMap(
+        modifier = Modifier.fillMaxSize(),
+        cameraPositionState = cameraPositionState,
         googleMapOptionsFactory = {
             GoogleMapOptions().mapId("DEMO_MAP_ID")
         },
@@ -36,6 +39,7 @@ fun MapsScreen(){
             markers.add(latLng)
         }
     ) {
+
         AdvancedMarker(
             state = MarkerState(position = LatLng(-34.0, 151.0)),
             title = "Marker in Sydney"
@@ -44,22 +48,13 @@ fun MapsScreen(){
             state = MarkerState(position = LatLng(35.66, 139.6)),
             title = "Marker in Tokyo"
         )
+
+
         markers.forEach { latLng ->
             AdvancedMarker(
                 state = MarkerState(position = latLng),
                 title = "Nuevo marcador"
             )
-        }
-
-    }
-    Box(Modifier.fillMaxSize()) {
-        GoogleMap(cameraPositionState = cameraPositionState)
-        Button(onClick = {
-            cameraPositionState
-            // Move the camera to a new zoom level
-
-        }) {
-            Text(text = "Zoom In")
         }
     }
 }
