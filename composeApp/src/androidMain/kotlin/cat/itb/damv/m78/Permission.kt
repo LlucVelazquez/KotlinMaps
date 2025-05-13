@@ -17,7 +17,7 @@ fun FeatureThatRequiresCameraPermission(function: @Composable () -> Unit) {
         android.Manifest.permission.CAMERA
     )
     if (cameraPermissionState.status.isGranted) {
-        Text("Camera permission Granted")
+        function()
     } else {
         Column {
             val textToShow = if (cameraPermissionState.status.shouldShowRationale) {

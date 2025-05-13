@@ -36,6 +36,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            implementation("io.coil-kt.coil3:coil-compose:3.1.0")
+            implementation("io.coil-kt.coil3:coil-network-ktor3:3.1.0")
             implementation("androidx.camera:camera-core:1.5.0-alpha06")
             implementation("androidx.camera:camera-camera2:1.5.0-alpha06")
             implementation("androidx.camera:camera-compose:1.5.0-alpha06")
