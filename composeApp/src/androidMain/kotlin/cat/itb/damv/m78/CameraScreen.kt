@@ -22,7 +22,7 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil3.compose.AsyncImage
 
-
+// camera
 @Composable
 fun CameraScreen() {
     FeatureThatRequiresCameraPermission() {
