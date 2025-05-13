@@ -1,4 +1,4 @@
-package cat.itb.damv.m78
+/*package cat.itb.damv.m78
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -103,4 +103,4 @@ fun Navigation() {
             }
         }
     }
-}
+}*/

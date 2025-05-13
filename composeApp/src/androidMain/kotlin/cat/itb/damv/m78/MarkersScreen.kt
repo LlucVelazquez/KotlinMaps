@@ -1,4 +1,4 @@
-package cat.itb.damv.m78
+/*package cat.itb.damv.m78
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -70,4 +70,4 @@ fun MarkersScreen(viewModel: MarkersViewModel = viewModel(), navViewModel: NavVi
             }
         }
     }
-}
+}*/

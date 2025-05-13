@@ -11,9 +11,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
+            CameraScreen()
             //App()
             //MapsScreen()
-            Navigation()
+            //Navigation()
         }
     }
 }

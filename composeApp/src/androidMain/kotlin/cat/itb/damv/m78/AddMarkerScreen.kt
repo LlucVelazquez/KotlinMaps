@@ -1,4 +1,4 @@
-package cat.itb.damv.m78
+/*package cat.itb.damv.m78
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -93,4 +93,4 @@ fun AddMarkerScreen(
             }
         }
     }
-}
+}*/

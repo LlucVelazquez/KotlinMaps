@@ -29,6 +29,7 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.ui)
+            implementation("com.google.accompanist:accompanist-permissions:0.37.2")
             implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
             implementation("com.google.maps.android:maps-compose:6.6.0")
             implementation(compose.components.resources)

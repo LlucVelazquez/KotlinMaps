@@ -1,4 +1,4 @@
-package cat.itb.damv.m78
+/*package cat.itb.damv.m78
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -46,4 +46,4 @@ fun MarkerDetailScreen(
             Text("Desar")
         }
     }
-}
+}*/
