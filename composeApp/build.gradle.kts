@@ -76,6 +76,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.material3.android)
+    implementation(libs.identity.jvm)
     debugImplementation(compose.uiTooling)
 }
 secrets {
