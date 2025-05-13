@@ -1,9 +1,10 @@
-/*package cat.itb.damv.m78
+package cat.itb.damv.m78
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Search
@@ -17,6 +18,7 @@ import kotlinx.coroutines.launch
 sealed interface Screen {
     data object Map: Screen
     data object Markers: Screen
+    data object Camera: Screen
     data object Details : Screen
     data object AddMarker : Screen
 }
@@ -58,6 +60,15 @@ fun Navigation() {
                         scope.launch { drawerState.close() }
                     }
                 )
+                NavigationDrawerItem(
+                    label = { Text("Camera") },
+                    selected = false,
+                    icon = { Icon(Icons.Default.Call, contentDescription = "Camera") },
+                    onClick = {
+                        navViewModel.navTo(Screen.Camera)
+                        scope.launch { drawerState.close() }
+                    }
+                )
             }
         },
         drawerState = drawerState,
@@ -88,6 +99,7 @@ fun Navigation() {
                 when (currentScreen) {
                     Screen.Map -> MapsScreen()
                     Screen.Markers -> MarkersScreen()
+                    Screen.Camera -> CameraScreen()
                     Screen.Details -> navViewModel.selectedMarkerId?.let { markerId ->
                         MarkerDetailScreen(markerId, navViewModel)
                     }
@@ -103,4 +115,4 @@ fun Navigation() {
             }
         }
     }
-}*/
+}

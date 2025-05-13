@@ -1,4 +1,4 @@
-/*package cat.itb.damv.m78
+package cat.itb.damv.m78
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -89,4 +89,4 @@ fun MapsScreen(viewModel: MarkersViewModel = viewModel()){
             Text("Tornar")
         }
     }
-}*/
+}
