@@ -29,6 +29,7 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.ui)
+            implementation("androidx.lifecycle:lifecycle-viewmodel-compose")
             implementation("com.google.maps.android:maps-compose:6.6.0")
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
