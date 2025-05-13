@@ -43,6 +43,15 @@ fun Navigation() {
             ModalDrawerSheet {
                 Text("Menú")
                 NavigationDrawerItem(
+                    label = { Text("Camera") },
+                    selected = false,
+                    icon = { Icon(Icons.Default.Call, contentDescription = "Camera") },
+                    onClick = {
+                        navViewModel.navTo(Screen.Camera)
+                        scope.launch { drawerState.close() }
+                    }
+                )
+                NavigationDrawerItem(
                     label = { Text("Map") },
                     selected = false,
                     icon = { Icon(Icons.Default.Place, contentDescription = "Map") },
@@ -57,15 +66,6 @@ fun Navigation() {
                     icon = { Icon(Icons.Default.Search, contentDescription = "Markers") },
                     onClick = {
                         navViewModel.navTo(Screen.Markers)
-                        scope.launch { drawerState.close() }
-                    }
-                )
-                NavigationDrawerItem(
-                    label = { Text("Camera") },
-                    selected = false,
-                    icon = { Icon(Icons.Default.Call, contentDescription = "Camera") },
-                    onClick = {
-                        navViewModel.navTo(Screen.Camera)
                         scope.launch { drawerState.close() }
                     }
                 )
